@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Hakeem&#39;s Blog</title>
+        <title>算法之搜索与图论 | Hakeem&#39;s Blog</title>
         <meta name="author" content="Hakeem">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -119,47 +119,23 @@
 </nav>
                     </div>
                     <div id="main">
-                        <div id="home-head">
-    <div id="home-background" style="background-image: url(https://s2.loli.net/2022/09/03/y3DJHTpq8gRZuiA.jpg)"></div>
-    
-    <div id="home-info" class="home-info" @click="home_click">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Hakeem&#39;s blog</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+                        
+<div class="article">
+    <div>
+        <h1>算法之搜索与图论 </h1>
     </div>
-    
-</div>
-
-<div id="home-posts-wrap" class="">
-    <div id="home-posts">
-        <div id="posts">
-            
-
-<div class="post">
-    <a href="/2022/09/04/算法之搜索与图论/">
-        <h2 class="post-title">算法之搜索与图论</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
             2022/9/4
         </span>
+        
+        
     </div>
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            <h2 id="树与图的存储"><a href="#树与图的存储" class="headerlink" title="树与图的存储"></a>树与图的存储</h2><h4 id="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。"><a href="#树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。" class="headerlink" title="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。"></a>树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。</h4><h5 id="1-邻接矩阵：g-a-b-存储边a-gt-b"><a href="#1-邻接矩阵：g-a-b-存储边a-gt-b" class="headerlink" title="(1) 邻接矩阵：g[a][b] 存储边a-&gt;b"></a>(1) 邻接矩阵：g[a][b] 存储边a-&gt;b</h5><h5 id="2-邻接表："><a href="#2-邻接表：" class="headerlink" title="(2) 邻接表："></a>(2) 邻接表：</h5><pre><code>// 对于每个点k，开一个单链表，存储k所有可以走到的点。h[k]存储这个单链表的头结点
+    <div class="content" v-pre>
+        <h2 id="树与图的存储"><a href="#树与图的存储" class="headerlink" title="树与图的存储"></a>树与图的存储</h2><h4 id="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。"><a href="#树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。" class="headerlink" title="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。"></a>树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。</h4><h5 id="1-邻接矩阵：g-a-b-存储边a-gt-b"><a href="#1-邻接矩阵：g-a-b-存储边a-gt-b" class="headerlink" title="(1) 邻接矩阵：g[a][b] 存储边a-&gt;b"></a>(1) 邻接矩阵：g[a][b] 存储边a-&gt;b</h5><h5 id="2-邻接表："><a href="#2-邻接表：" class="headerlink" title="(2) 邻接表："></a>(2) 邻接表：</h5><pre><code>// 对于每个点k，开一个单链表，存储k所有可以走到的点。h[k]存储这个单链表的头结点
 int h[N], e[N], ne[N], idx;
 
 // 添加一条边a-&gt;b
@@ -173,117 +149,6 @@ idx = 0;
 memset(h, -1, sizeof h);
 </code></pre>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2022/09/04/算法之搜索与图论/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2022/09/03/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
-            </span>
-            2022/9/3
-        </span>
-    </div>
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2022/09/03/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-             
-<div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">
-            1
-        </span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-        </div>
-    </div>
-    
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="https://s2.loli.net/2022/09/03/w9etJln8RLaPEpz.jpg " alt="avatar">
-        </div>
-        <div class="name">
-            Hakeem
-        </div>
-        <div class="descriptions">
-            
-            <div class="description">
-                Welcom to my blog!
-            </div>
-            
-        </div>
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Hakeem0924">
-                    <i class="fa-brands fa-github fa-fw"></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://b23.tv/W34qaTa">
-                    <i class="fa-brands fa-bilibili fa-fw"></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://instagram.com/hakeem_0924?r=nametag">
-                    <i class="fa-brands fa-instagram fa-fw"></i>
-                </a>
-            </span>
-            
-        </div>
-        <div class="friend-links">
-            
-        </div>
-    </div>
-</div>
     </div>
     
 </div>
