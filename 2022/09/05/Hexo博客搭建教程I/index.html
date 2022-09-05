@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Tags: 数据结构 | Hakeem&#39;s Blog</title>
+        <title>Hexo博客搭建教程I | Hakeem&#39;s Blog</title>
         <meta name="author" content="Hakeem">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -119,106 +119,74 @@
 </nav>
                     </div>
                     <div id="main">
-                         
-<div class="categories-tags">
-    
-    <div class="all-s">
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: #ffa2c4">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                Hexo
-            </a>
-        </span>
-        
-        
-        <span>
-            <a href="/tags/C-C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                C/C++
-            </a>
-        </span>
-        
-        
-        <span>
-            <a href="/tags/algorithm/" style="background: #ff7d73">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                algorithm
-            </a>
-        </span>
-        
-        
-        <span>
-            <a href="/tags/数据结构/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                数据结构
-            </a>
-        </span>
-        
+                        
+<div class="article">
+    <div>
+        <h1>Hexo博客搭建教程I </h1>
     </div>
-    <div id="archives">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/9/5
+        </span>
         
-        <div class="timeline">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2022/9/4</div>
-                <a href="/2022/09/04/算法之搜索与图论/">
-                    <h3>算法之搜索与图论</h3>
+        <span class="category">
+            <a href="/categories/教程/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #03a9f4">
+                    Hexo
                 </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/算法/">
-                            <span class="icon">
-                                <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
-                            </span>
-                            算法
-                        </a>
-                    </span>
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/C-C/" style="color: #03a9f4">
-                                C/C++
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/algorithm/" style="color: #00a596">
-                                algorithm
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/数据结构/" style="color: #ffa2c4">
-                                数据结构
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
+            </span>
+            
+        </span>
         
     </div>
+    <div class="content" v-pre>
+        <p>搭建这个博客用了一下午+一晚上，查询了许多资料，感觉都不是很全，于是写一篇教程总结一下。</p>
+<span id="more"></span>
+<p>作者的配置：MacOS Monterey 12.1</p>
+<h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><p>Hexo 是一款基于Node.Js的博客框架，易于安装使用，且方便挂载在GitHub和Coding上托管。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用主题生成静态网页。<br>Hexo 创建者是台湾人，对中文的支持十分友好，可以选择中文访问官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo中文官网</a>。</p>
+<p>学习 Markdown 语法可以查看 Github 官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/cn/get-started/writing-on-github">基本撰写和格式语法</a></p>
+<h2 id="1-安装-Git-和-Node-Js"><a href="#1-安装-Git-和-Node-Js" class="headerlink" title="1.安装 Git 和 Node.Js"></a>1.安装 Git 和 Node.Js</h2><ul>
+<li>Git<br>从<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>下载Git<br>完成后在终端用<code>git --version</code>命令检查，有版本提示即安装正确。</li>
+<li>Node.Js<br>从<a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org</a>下载 Node.js，选择 LTS 版本安装<br>完成后在终端用 <code>node -v</code> 和 <code>npm -v</code> 两个命令检查，有版本提示即安装正确。</li>
+</ul>
+<h2 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2.安装 Hexo"></a>2.安装 Hexo</h2><p>在 Git 和 Node.Js 安装完毕后，就可以安装 Hexo 了。在 /Users/(your username)/路径下创建blog文件夹，在终端输入<code>cd blog</code>命令进入文件夹下，输入<code>npm i -g hexo</code>命令，并用<code>hexo --version</code>检查安装版本。</p>
+<p>至此，安装部分就全部完成了，接下来初始化 Hexo ：运行<code>hexo init</code> &amp; <code>npm install</code></p>
+<p>Hexo 官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs">https://hexo.io/zh-cn/docs</a></p>
+<h2 id="3-检查文件夹目录："><a href="#3-检查文件夹目录：" class="headerlink" title="3.检查文件夹目录："></a>3.检查文件夹目录：</h2><p>打开之前创建的blog文件夹即可看到生成的文件：</p>
+<blockquote>
+<p>node_modules: 依赖包<br>scaffolds: 生成文章的一些模版<br>source: 存放文章、页面内容等<br>themes: 主题<br>_config.yml: 博客的配置文件</p>
+</blockquote>
+<h2 id="4-Hexo-基本命令"><a href="#4-Hexo-基本命令" class="headerlink" title="4.Hexo 基本命令"></a>4.Hexo 基本命令</h2><ul>
+<li>生成静态文件：<code>hexo g</code></li>
+<li>清除静态文件：<code>hexo cl</code></li>
+<li>在本地运行：<code>hexo s</code></li>
+<li>部署到网站：<code>hexo d</code></li>
+<li>创建新文章：<code>hexo new &lt;post-name&gt;</code></li>
+</ul>
+<p>此时，在终端输入<code>hexo g</code> &amp; <code>hexo s</code>命令，即可打开 Hexo 的本地服务，将生成的链接复制到浏览器即可查看到生成的博客了！</p>
+<p><strong>P.S.：创建新文章命令中的<post-name>是文件名，标题在文章中的 title 参数中修改，文件名建议全部小写，若有大写字母，部署后部分主题可能会 404:Not Found</strong></p>
+<p>下一篇：coming soon :P</p>
+
+    </div>
+    
 </div>
                          
 <footer id="footer">
