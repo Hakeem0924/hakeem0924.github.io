@@ -130,7 +130,7 @@
         <span class="info">
             <div class="wrap">
                 <h1>Hakeem&#39;s blog</h1>
-                <h3></h3>
+                <h3>Hi, I&#39;m Hakeem.</h3>
                 <h5></h5>
             </div>
         </span>
@@ -149,6 +149,15 @@
     </a>
     <div class="category-and-date">
         
+        <span class="category">
+            <a href="/categories/算法/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                算法
+            </a>
+        </span>
+        
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
@@ -159,25 +168,81 @@
     <div class="excerpt">
         <div class="content" v-pre>
             
-            <h2 id="树与图的存储"><a href="#树与图的存储" class="headerlink" title="树与图的存储"></a>树与图的存储</h2><h4 id="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。"><a href="#树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-gt-b-b-gt-a。因此我们可以只考虑有向图的存储。" class="headerlink" title="树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。"></a>树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。</h4><h5 id="1-邻接矩阵：g-a-b-存储边a-gt-b"><a href="#1-邻接矩阵：g-a-b-存储边a-gt-b" class="headerlink" title="(1) 邻接矩阵：g[a][b] 存储边a-&gt;b"></a>(1) 邻接矩阵：g[a][b] 存储边a-&gt;b</h5><h5 id="2-邻接表："><a href="#2-邻接表：" class="headerlink" title="(2) 邻接表："></a>(2) 邻接表：</h5><pre><code>// 对于每个点k，开一个单链表，存储k所有可以走到的点。h[k]存储这个单链表的头结点
+            <h3 id="树与图的存储"><a href="#树与图的存储" class="headerlink" title="树与图的存储"></a>树与图的存储</h3><p>树是一种特殊的图，与图的存储方式相同。对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。因此我们可以只考虑有向图的存储。 </p>
+<p>(1) 邻接矩阵：g[a][b] 存储边a-&gt;b<br>(2) 邻接表：</p>
+<pre><code class="C++">// 对于每个点k，开一个单链表，存储k所有可以走到的点。h[k]存储这个单链表的头结点
 int h[N], e[N], ne[N], idx;
-
 // 添加一条边a-&gt;b
 void add(int a, int b)
-&#123;
     e[idx] = b, ne[idx] = h[a], h[a] = idx ++ ;
-&#125;
-
 // 初始化
 idx = 0;
 memset(h, -1, sizeof h);
 </code></pre>
+<hr>
+<h3 id="树与图的遍历"><a href="#树与图的遍历" class="headerlink" title="树与图的遍历"></a>树与图的遍历</h3><p>时间复杂度为O(n+m)，n表示点数，m表示边数</p>
+<p>（1）深度优先遍历 – 模版题: <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/848/">AcWing 846.树的重心</a></p>
+<pre><code class="C++">int dfs(int u)
+&#123;
+    st[u] = true; // st[u] 表示点u已经被遍历过
+    for (int i = h[u]; i != -1; i = ne[i])
+    &#123;
+        int j = e[i];
+        if (!st[j]) dfs(j);
+    &#125;
+&#125;
+</code></pre>
+<p>（2）宽度优先遍历 – 模版题: <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/849/">AcWing 847.图中点的层次</a></p>
+<pre><code class="C++">queue&lt;int&gt; q;
+st[1] = true; // 表示1号点已经被遍历过
+q.push(1);
+while (q.size())
+&#123;
+    int t = q.front();
+    q.pop();
+    for (int i = h[t]; i != -1; i = ne[i])
+    &#123;
+        int j = e[i];
+        if (!st[j])
+        &#123;
+            st[j] = true; // 表示点j已经被遍历过
+            q.push(j);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<hr>
 
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/C-C/" style="color: #00bcd4">
+                C/C++
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/algorithm/" style="color: #00a596">
+                algorithm
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/数据结构/" style="color: #00bcd4">
+                数据结构
+            </a>
+        </span>
         
     </div>
     <a href="/2022/09/04/算法之搜索与图论/" class="go-post">阅读全文</a>
@@ -199,19 +264,7 @@ memset(h, -1, sizeof h);
     <div class="excerpt">
         <div class="content" v-pre>
             
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <p>自己的HEXO博客今天终于搭建好了，纪念一下。</p>
 
             
         </div>
@@ -291,7 +344,7 @@ memset(h, -1, sizeof h);
 <footer id="footer">
     <div class="footer-wrap">
         <div>
-            © 20xx - 2022 Hakeem&#39;s blog
+            © 2022 - 2022 Hakeem&#39;s blog
             <span class="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
