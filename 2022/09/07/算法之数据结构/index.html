@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Hexo博客搭建教程I | Hakeem&#39;s Blog</title>
+        <title>算法之数据结构 | Hakeem&#39;s Blog</title>
         <meta name="author" content="Hakeem">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -122,22 +122,22 @@
                         
 <div class="article">
     <div>
-        <h1>Hexo博客搭建教程I </h1>
+        <h1>算法之数据结构 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2022/9/5
+            2022/9/7
         </span>
         
         <span class="category">
-            <a href="/categories/教程/">
+            <a href="/categories/算法/">
                 <span class="icon">
                     <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
                 </span>
-                教程
+                算法
             </a>
         </span>
         
@@ -149,8 +149,22 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #03a9f4">
-                    Hexo
+                <a href="/tags/C-C/" style="color: #00bcd4">
+                    C/C++
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/algorithm/" style="color: #00bcd4">
+                    algorithm
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数据结构/" style="color: #ff7d73">
+                    数据结构
                 </a>
             </span>
             
@@ -158,32 +172,172 @@
         
     </div>
     <div class="content" v-pre>
-        <p>搭建这个博客用了一下午+一晚上，查询了许多资料，感觉都不是很全，于是写一篇教程总结一下。</p>
+        <p>常用代码模版1————数据结构</p>
 <span id="more"></span>
-<p>作者的配置：MacOS Monterey 12.1</p>
-<h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h2><p>Hexo 是一款基于Node.Js的博客框架，易于安装使用，且方便挂载在GitHub和Coding上托管。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用主题生成静态网页。<br>Hexo 创建者是台湾人，对中文的支持十分友好，可以选择中文访问官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo中文官网</a>。</p>
-<p>学习 Markdown 语法可以查看 Github 官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/cn/get-started/writing-on-github">基本撰写和格式语法</a></p>
-<h2 id="1-安装-Git-和-Node-Js"><a href="#1-安装-Git-和-Node-Js" class="headerlink" title="1.安装 Git 和 Node.Js"></a>1.安装 Git 和 Node.Js</h2><ul>
-<li>Git<br>从<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>下载Git<br>完成后在终端用<code>git --version</code>命令检查，有版本提示即安装正确。</li>
-<li>Node.Js<br>从<a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org</a>下载 Node.js，选择 LTS 版本安装<br>完成后在终端用 <code>node -v</code> 和 <code>npm -v</code> 两个命令检查，有版本提示即安装正确。</li>
-</ul>
-<h2 id="2-安装-Hexo"><a href="#2-安装-Hexo" class="headerlink" title="2.安装 Hexo"></a>2.安装 Hexo</h2><p>在 Git 和 Node.Js 安装完毕后，就可以安装 Hexo 了。在 /Users/(your username)/路径下创建blog文件夹，在终端输入<code>cd blog</code>命令进入文件夹下，输入<code>npm i -g hexo</code>命令，并用<code>hexo --version</code>检查安装版本。</p>
-<p>至此，安装部分就全部完成了，接下来初始化 Hexo ：运行<code>hexo init</code> &amp; <code>npm install</code></p>
-<p>Hexo 官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs">https://hexo.io/zh-cn/docs</a></p>
-<h2 id="3-检查文件夹目录："><a href="#3-检查文件夹目录：" class="headerlink" title="3.检查文件夹目录："></a>3.检查文件夹目录：</h2><p>打开之前创建的blog文件夹即可看到生成的文件：</p>
-<blockquote>
-<p>node_modules: 依赖包<br>scaffolds: 生成文章的一些模版<br>source: 存放文章、页面内容等<br>themes: 主题<br>_config.yml: 博客的配置文件</p>
-</blockquote>
-<h2 id="4-Hexo-基本命令"><a href="#4-Hexo-基本命令" class="headerlink" title="4.Hexo 基本命令"></a>4.Hexo 基本命令</h2><ul>
-<li>生成静态文件：<code>hexo g</code></li>
-<li>清除静态文件：<code>hexo cl</code></li>
-<li>在本地运行：<code>hexo s</code></li>
-<li>部署到网站：<code>hexo d</code></li>
-<li>创建新文章：<code>hexo new &lt;post-name&gt;</code></li>
-</ul>
-<p>此时，在终端输入<code>hexo g</code> &amp; <code>hexo s</code>命令，即可打开 Hexo 的本地服务，将生成的链接复制到浏览器即可查看到生成的博客了！</p>
-<p><strong>P.S.：创建新文章命令中的<post-name>是文件名，标题在文章中的 title 参数中修改，文件名建议全部小写，若有大写字母，部署后部分主题可能会 404:Not Found</strong></p>
-<p>下一篇：coming soon :P</p>
+<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><pre><code class="C++">常见模型：找出每个数左边离它最近的比它大/小的数
+int tt = 0;
+for (int i = 1; i &lt;= n; i ++ )
+&#123;
+    while (tt &amp;&amp; check(stk[tt], i)) tt -- ;
+    stk[ ++ tt] = i;
+&#125;
+</code></pre>
+<hr>
+<h3 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h3><pre><code class="C++">常见模型：找出滑动窗口中的最大值/最小值
+int hh = 0, tt = -1;
+for (int i = 0; i &lt; n; i ++ )
+&#123;
+    while (hh &lt;= tt &amp;&amp; check_out(q[hh])) hh ++ ;  // 判断队头是否滑出窗口
+    while (hh &lt;= tt &amp;&amp; check(q[tt], i)) tt -- ;
+    q[ ++ tt] = i;
+&#125;
+</code></pre>
+<hr>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><pre><code class="C++">// s[]是长文本，p[]是模式串，n是s的长度，m是p的长度
+求模式串的Next数组：
+for (int i = 2, j = 0; i &lt;= m; i ++ )
+&#123;
+    while (j &amp;&amp; p[i] != p[j + 1]) j = ne[j];
+    if (p[i] == p[j + 1]) j ++ ;
+    ne[i] = j;
+&#125;
+
+// 匹配
+for (int i = 1, j = 0; i &lt;= n; i ++ )
+&#123;
+    while (j &amp;&amp; s[i] != p[j + 1]) j = ne[j];
+    if (s[i] == p[j + 1]) j ++ ;
+    if (j == m)
+    &#123;
+        j = ne[j];
+        // 匹配成功后的逻辑
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="Trie树"><a href="#Trie树" class="headerlink" title="Trie树"></a>Trie树</h3><pre><code class="C++">int son[N][26], cnt[N], idx;
+// 0号点既是根节点，又是空节点
+// son[][]存储树中每个节点的子节点
+// cnt[]存储以每个节点结尾的单词数量
+
+// 插入一个字符串
+void insert(char *str)
+&#123;
+    int p = 0;
+    for (int i = 0; str[i]; i ++ )
+    &#123;
+        int u = str[i] - &#39;a&#39;;
+        if (!son[p][u]) son[p][u] = ++ idx;
+        p = son[p][u];
+    &#125;
+    cnt[p] ++ ;
+&#125;
+
+// 查询字符串出现的次数
+int query(char *str)
+&#123;
+    int p = 0;
+    for (int i = 0; str[i]; i ++ )
+    &#123;
+        int u = str[i] - &#39;a&#39;;
+        if (!son[p][u]) return 0;
+        p = son[p][u];
+    &#125;
+    return cnt[p];
+&#125;
+</code></pre>
+<hr>
+<h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><pre><code class="C++">(1)朴素并查集：
+
+    int p[N]; //存储每个点的祖宗节点
+
+    // 返回x的祖宗节点
+    int find(int x)
+    &#123;
+        if (p[x] != x) p[x] = find(p[x]);
+        return p[x];
+    &#125;
+
+    // 初始化，假定节点编号是1~n
+    for (int i = 1; i &lt;= n; i ++ ) p[i] = i;
+
+    // 合并a和b所在的两个集合：
+    p[find(a)] = find(b);
+
+
+(2)维护size的并查集：
+
+    int p[N], size[N];
+    //p[]存储每个点的祖宗节点, size[]只有祖宗节点的有意义，表示祖宗节点所在集合中的点的数量
+
+    // 返回x的祖宗节点
+    int find(int x)
+    &#123;
+        if (p[x] != x) p[x] = find(p[x]);
+        return p[x];
+    &#125;
+
+    // 初始化，假定节点编号是1~n
+    for (int i = 1; i &lt;= n; i ++ )
+    &#123;
+        p[i] = i;
+        size[i] = 1;
+    &#125;
+
+    // 合并a和b所在的两个集合：
+    size[find(b)] += size[find(a)];
+    p[find(a)] = find(b);
+
+
+(3)维护到祖宗节点距离的并查集：
+
+    int p[N], d[N];
+    //p[]存储每个点的祖宗节点, d[x]存储x到p[x]的距离
+
+    // 返回x的祖宗节点
+    int find(int x)
+    &#123;
+        if (p[x] != x)
+        &#123;
+            int u = find(p[x]);
+            d[x] += d[p[x]];
+            p[x] = u;
+        &#125;
+        return p[x];
+    &#125;
+
+    // 初始化，假定节点编号是1~n
+    for (int i = 1; i &lt;= n; i ++ )
+    &#123;
+        p[i] = i;
+        d[i] = 0;
+    &#125;
+
+    // 合并a和b所在的两个集合：
+    p[find(a)] = find(b);
+    d[find(a)] = distance; // 根据具体问题，初始化find(a)的偏移量
+</code></pre>
+<hr>
+<h3 id="字符串哈希"><a href="#字符串哈希" class="headerlink" title="字符串哈希"></a>字符串哈希</h3><pre><code class="C++">核心思想：将字符串看成P进制数，P的经验值是131或13331，取这两个值的冲突概率低
+小技巧：取模的数用2^64，这样直接用unsigned long long存储，溢出的结果就是取模的结果
+
+typedef unsigned long long ULL;
+ULL h[N], p[N]; // h[k]存储字符串前k个字母的哈希值, p[k]存储 P^k mod 2^64
+
+// 初始化
+p[0] = 1;
+for (int i = 1; i &lt;= n; i ++ )
+&#123;
+    h[i] = h[i - 1] * P + str[i];
+    p[i] = p[i - 1] * P;
+&#125;
+
+// 计算子串 str[l ~ r] 的哈希值
+ULL get(int l, int r)
+&#123;
+    return h[r] - h[l - 1] * p[r - l + 1];
+&#125;
+</code></pre>
 
     </div>
     
@@ -232,7 +386,7 @@
         owner: "Hakeem0924",
         admin: ["Hakeem0924"],
         language: "zh-CN",
-        id: "Mon Sep 05 2022 16:53:39 GMT+0800",
+        id: "Wed Sep 07 2022 22:51:15 GMT+0800",
         distractionFreeMode: false,
         
     })
