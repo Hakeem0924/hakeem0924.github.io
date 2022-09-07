@@ -149,14 +149,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #03a9f4">
+                <a href="/tags/C-C/" style="color: #00bcd4">
                     C/C++
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/algorithm/" style="color: #00a596">
+                <a href="/tags/algorithm/" style="color: #ffa2c4">
                     algorithm
                 </a>
             </span>
@@ -361,6 +361,12 @@ int kruskal()
 
     </div>
     
+    <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
+    
 </div>
                          
 <footer id="footer">
@@ -389,6 +395,24 @@ int kruskal()
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
         
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
+<script>
+    var clientID = "4ed6c9dc7e8f70d0e366", clientSecret = "d9dfac8d1527bad3b1458c5ddeed81ac30b2a72f";
+    
+    const gitalk = new Gitalk({
+        clientID: clientID,
+        clientSecret: clientSecret,
+        repo: "hakeem0924.github.io",
+        owner: "Hakeem0924",
+        admin: ["Hakeem0924"],
+        language: "zh-CN",
+        id: location.pathname,
+        distractionFreeMode: false,
+        
+    })
+    gitalk.render("gitalk-container")
+</script>
+
 
     </body>
 </html>
